@@ -1,23 +1,10 @@
 @extends('layouts.base')
 @push('styles')
+
    <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/demo2.css">
-   <style>
-    .product-box .product-details h5{
-        width: 100%;
-    }
 
-    .wishlist:hover,
-    .wishlist.active {
-    
-     background: red;
-    }
-
-   </style>
 @endpush
 @section('content')
-
-
-
 
 <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">
     <ul class="circles">
@@ -63,9 +50,7 @@
                         <div class="accordion-item category-rating">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo">
-                                    Brand
-                                </button>
+                                    data-bs-target="#collapseTwo">Brand</button>
                             </h2>
 
             <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -85,83 +70,6 @@
                 </div>
             </div>
         </div>
-                         
-
-                        <div class="accordion-item category-color">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree">
-                                    Color
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse show"
-                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <ul class="category-list">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-check"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item category-price">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour">Price</button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse show"
-                                aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <div class="range-slider category-list">
-                                        <input type="text" class="js-range-slider" id="js-range-price" value="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="accordion-item category-price">
                             <h2 class="accordion-header" id="headingFive">
@@ -225,58 +133,16 @@
             </div>
         </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSeven">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSeven">
-                        Discount Range
-                    </button>
-                </h2>
-                <div id="collapseSeven" class="accordion-collapse collapse show"
-                    aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <ul class="category-list">
-                            <li>
-                                <div class="form-check ps-0 custome-form-check">
-                                    <input class="checkbox_animated check-it" type="checkbox"
-                                        id="flexCheckDefault19">
-                                    <label class="form-check-label" for="flexCheckDefault19">5% and
-                                        above</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check ps-0 custome-form-check">
-                                    <input class="checkbox_animated check-it" type="checkbox"
-                                        id="flexCheckDefault20">
-                                    <label class="form-check-label" for="flexCheckDefault20">10% and
-                                        above</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check ps-0 custome-form-check">
-                                    <input class="checkbox_animated check-it" type="checkbox"
-                                        id="flexCheckDefault21">
-                                    <label class="form-check-label" for="flexCheckDefault21">20% and
-                                        above</label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 
             <div class="category-product col-lg-9 col-12 ratio_30">
-
                 <div class="row g-4">
                     <!-- label and featured section -->
                     <div class="col-md-12">
                         <ul class="short-name">
-
-
-                        </ul>
+                      </ul>
                     </div>
 
                     <div class="col-12">
@@ -356,27 +222,26 @@
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
-                    <div class="cart-wrap">
-                        <ul>
+                            <div class="cart-wrap">
+                                <ul>
+                                   <li>
+                                      <a href="javascript:void(0)" class="addtocart-btn" >
+                                      <i data-feather="shopping-cart"></i>
+                                      </a>
+                                   </li>
+                                <li>
+                                        <a href="javascript:void(0)">
+                                        <i data-feather="eye"></i>
+                                        </a>
+                                </li>
                             <li>
-                                <a href="javascript:void(0)" class="addtocart-btn" >
-                                    <i data-feather="shopping-cart"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    
-                                    <i data-feather="eye"></i>
-                                </a>
-                            </li>
-                        <li>
                             <a href="javascript:void(0)" class="wishlist"
                                 data-id='{{$product->id}}' 
                                 data-name='{{$product->name}}'
                                 data-quantity = 1 
                                 data-price = '{{$product->regular_price}}'> 
                                     <i data-feather="heart"></i>
-                            </a>
+                            </a>    
                         </li>
                                     </ul>
                                 </div>

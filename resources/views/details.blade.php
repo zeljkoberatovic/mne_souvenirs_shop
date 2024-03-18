@@ -239,60 +239,10 @@
                                         @endif 
                                     </h6>
 
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 78%"></div>
-                                    </div>
-                                    <div class="font-light timer-5">
-                                        <h5>Order in the next to get</h5>
-                                        <ul class="timer1">
-                                            <li class="counter">
-                                                <h5 id="days">&#9251;</h5> Days :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="hours">&#9251;</h5> Hour :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="minutes">&#9251;</h5> Min :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="seconds">&#9251;</h5> Sec
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    
                                 </div>
 
-                                <div class="border-product">
-                                    <h6 class="product-title d-block">share it</h6>
-                                    <div class="product-icon">
-                                        <ul class="product-social">
-                                            <li>
-                                                <a href="https://www.facebook.com/">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.google.com/">
-                                                    <i class="fab fa-google-plus-g"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://twitter.com/">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.instagram.com/">
-                                                    <i class="fab fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                            <li class="pe-0">
-                                                <a href="https://www.google.com/">
-                                                    <i class="fas fa-rss"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -341,7 +291,7 @@
                                         </tr>
                                         <tr>
                                             <th>Date First Available</th>
-                                            <td>5 April 2021</td>
+                                            <td>5 April 2024</td>
                                         </tr>
                                         <tr>
                                             <th>Manufacturer‏</th>
@@ -677,7 +627,7 @@
                                                     uses a Qualcomm octacore processor in place of the Exynos that
                                                     shipped with the first gen.</p>
 
-                                                <p class="date-custo font-light">- Sep 08, 2021</p>
+                                                <p class="date-custo font-light">- Sep 08, 2024</p>
                                             </div>
                                         </div>
 
@@ -712,7 +662,7 @@
                                                     response, but expected as tablet is 2 generations old. But works
                                                     fine and good value for the money.</p>
 
-                                                <p class="date-custo font-light">- Sep 08, 2021</p>
+                                                <p class="date-custo font-light">- Sep 08, 2024</p>
                                             </div>
                                         </div>
 
@@ -745,7 +695,7 @@
                                                     of
                                                     the touch screen.</p>
 
-                                                <p class="date-custo font-light">- Sep 08, 2021</p>
+                                                <p class="date-custo font-light">- Sep 08, 2024</p>
                                             </div>
                                         </div>
 
@@ -775,14 +725,14 @@
                                                     </li>
                                                 </ul>
                                                 <p class="font-light">I purchased the Tablet May 2017 and now April
-                                                    2019
+                                                    2023
                                                     I have to charge it everyday. I don't watch movies on it..just
                                                     play
                                                     a game or two while on lunch. I guess now I need to power it
                                                     down
                                                     for future use.</p>
 
-                                                <p class="date-custo font-light">- Sep 08, 2021</p>
+                                                <p class="date-custo font-light">- Sep 08, 2024</p>
                                             </div>
                                         </div>
                                     </div>

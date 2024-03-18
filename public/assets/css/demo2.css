@@ -110,6 +110,16 @@
       -webkit-transform: scale(0.5, 0.5);
               transform: scale(0.5, 0.5); }
 
+    .product-box .product-details h5{
+                width: 100%;
+            }
+        
+            .wishlist:hover,
+            .wishlist.active {
+            
+             background: red;
+            }       
+
 /*======= buttons css end  ======= */
 /*======= align css starts  ======= */
 /*======= align css ends  ======= */
