@@ -1,10 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
+ //ako je "Cart" klasa deo Laravel paketa treće strane, najbolje je koristiti potpuni namespace.
+//use Cart;
+
 
 class WishlistController extends Controller
 {

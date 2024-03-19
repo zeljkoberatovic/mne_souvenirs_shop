@@ -47,6 +47,7 @@
         }
        
     </style>
+    
     <link rel="stylesheet" href="{{asset('assets/css/custom.css') }}">
 @stack('styles')
 </head>
@@ -256,7 +257,7 @@
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0)">
+                <a href="">
                     <i data-feather="heart"></i>
                     <span>Wishlist</span>
                 </a>
