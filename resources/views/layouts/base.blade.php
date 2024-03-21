@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="MkRqEzTGuoSx6LqJUm0OAKxSgNUYt26wTT7RMUZY">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="{{asset('assets/images/favicon.ico') }}">
-    <link rel="icon" href="{{asset('assets/images/favicon.ico" type="image/x-icon') }}">
-    <link rel="icon" href="{{asset('assets/images/favicon.ico" type="image/x-icon') }}">
+    <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}">
+    <link rel="icon" href="{{ url('assets/images/favicon.ico" type="image/x-icon') }}">
+    <link rel="icon" href="{{ url('assets/images/favicon.ico" type="image/x-icon') }}">
     <meta name="theme-color" content="#e87316">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="MS Shop">
-    <meta name="msapplication-TileImage" content="{{asset('assets/images/favicon.ico') }}">
+    <meta name="msapplication-TileImage" content="{{ url('assets/images/favicon.ico') }}">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,14 +23,14 @@
 
     <title>MS Shop</title>
 
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{asset('assets/css/vendors/ion.rangeSlider.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/font-awesome.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/feather-icon.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/slick/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/slick/slick-theme.css') }}">
-    <link id="color-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/demo4.css') }}">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/vendors/ion.rangeSlider.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/feather-icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/slick/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/slick/slick-theme.css') }}">
+    <link id="color-link" rel="stylesheet" type="text/css" href="{{ url('assets/css/demo4.css') }}">
     <style>
         .h-logo {
             max-width: 185px !important;
@@ -48,7 +48,7 @@
        
     </style>
     
-    <link rel="stylesheet" href="{{asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/custom.css') }}">
 @stack('styles')
 </head>
 
@@ -117,7 +117,7 @@
                             <div class="menu-left">
                                 <div class="brand-logo">
                                     <a href="{{route('app.index')}}">
-                                        <img src="{{asset('assets/images/logo.png')}}" class="h-logo img-fluid blur-up lazyload"
+                                        <img src="{{ url('assets/images/logo.png')}}" class="h-logo img-fluid blur-up lazyload"
                                             alt="logo">
                                     </a>
                                 </div>
@@ -158,7 +158,7 @@
                         <a href="{{route('wishlist.list')}}">
                             <i data-feather="heart"></i>
                             <span id="wishlist-count" class="label label-theme rounded-pill">
-                             <!--fun. za prikazivanje artikala koji se nalaze na wishlisti-->
+                             <!-- za prikazivanje artikala koji se nalaze na wishlisti-->
                             {{Cart::instance('wishlist')->content()->count()}}
                             </span>
                         </a>
@@ -283,7 +283,7 @@
                         <div class="footer-contact">
                             <div class="brand-logo">
                                 <a href="{{route('app.index')}}" class="footer-logo float-start">
-                                    <img src="{{asset('assets/images/logo.png') }}" class="f-logo img-fluid blur-up lazyload"
+                                    <img src="{{ url('assets/images/logo.png') }}" class="f-logo img-fluid blur-up lazyload"
                                         alt="logo">
                                 </a>
                             </div>
@@ -403,25 +403,25 @@
                             <li class="font-dark">We accept:</li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/1.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ url('assets/images/payment-icon/1.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/2.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ url('assets/images/payment-icon/2.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/3.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ url('assets/images/payment-icon/3.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/4.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ url('assets/images/payment-icon/4.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
@@ -576,7 +576,7 @@
                                                 <div class="img-wrapper">
                                                     <div class="front">
                                                         <a href="product/details.html">
-                                                            <img src="{{asset('assets/images/fashion/product/front/4.jpg')}}"-->
+                                                            <img src="{{ url('assets/images/fashion/product/front/4.jpg')}}"-->
                                                                 class="bg-img blur-up lazyload" alt="">
                                                         </a>
                                                     </div>
@@ -606,21 +606,21 @@
         </a>
     </div>
     <div class="bg-overlay"></div>
-    <script src="{{asset('assets/js/jquery-3.5.1.min.js') }}"></script>
-    <script src="{{asset('assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{asset('assets/js/feather/feather.min.js') }}"></script>
-    <script src="{{asset('assets/js/lazysizes.min.js') }}"></script>
-    <script src="{{asset('assets/js/slick/slick.js') }}"></script>
-    <script src="{{asset('assets/js/slick/slick-animation.min.js') }}"></script>
-    <script src="{{asset('assets/js/slick/custom_slick.js') }}"></script>
-    <script src="{{asset('assets/js/price-filter.js') }}"></script>
-    <script src="{{asset('assets/js/ion.rangeSlider.min.js') }}"></script>
-    <script src="{{asset('assets/js/filter.js') }}"></script>
-    <script src="{{asset('assets/js/newsletter.js') }}"></script>
-    <script src="{{asset('assets/js/cart_modal_resize.js') }}"></script>
-    <script src="{{asset('assets/js/bootstrap/bootstrap-notify.min.js') }}"></script>
-    <script src="{{asset('assets/js/theme-setting.js') }}"></script>
-    <script src="{{asset('assets/js/script.js') }}"></script>
+    <script src="{{ url('assets/js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/js/feather/feather.min.js') }}"></script>
+    <script src="{{ url('assets/js/lazysizes.min.js') }}"></script>
+    <script src="{{ url('assets/js/slick/slick.js') }}"></script>
+    <script src="{{ url('assets/js/slick/slick-animation.min.js') }}"></script>
+    <script src="{{ url('assets/js/slick/custom_slick.js') }}"></script>
+    <script src="{{ url('assets/js/price-filter.js') }}"></script>
+    <script src="{{ url('assets/js/ion.rangeSlider.min.js') }}"></script>
+    <script src="{{ url('assets/js/filter.js') }}"></script>
+    <script src="{{ url('assets/js/newsletter.js') }}"></script>
+    <script src="{{ url('assets/js/cart_modal_resize.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap/bootstrap-notify.min.js') }}"></script>
+    <script src="{{ url('assets/js/theme-setting.js') }}"></script>
+    <script src="{{ url('assets/js/script.js') }}"></script>
     <script>
         $(function () {
             $('[data-bs-toggle="tooltip"]').tooltip()
