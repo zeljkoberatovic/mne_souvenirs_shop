@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @push('styles')
-<link id="color-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/demo2.css')}}">
+<link id="color-link" rel="stylesheet" type="text/css" href="{{ url('assets/css/demo2.css')}}">
 @endpush
 @section('content')
 
@@ -60,7 +60,7 @@
                                            @endphp
                                         @foreach($images as $image)
                                             <div>
-                                                <img src="{{asset('assets/images/fashion/product/front')}}/{{$image}}"
+                                                <img src="{{ url('assets/images/fashion/product/front')}}/{{$image}}"
                                                     class="img-fluid blur-up lazyload" alt="{{$product->name}}">
                                             </div>
                                         @endforeach
@@ -70,7 +70,7 @@
                                 <div class="col-lg-10">
                                     <div class="details-image-1 ratio_asos">
                                         <div>
-                                            <img src="{{asset('assets/images/fashion/product/front')}}/{{$product->image}}"         
+                                            <img src="{{ url('assets/images/fashion/product/front')}}/{{$product->image}}"         
                                                 class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="{{$product->name}}">
                                         </div>
                                        <div>

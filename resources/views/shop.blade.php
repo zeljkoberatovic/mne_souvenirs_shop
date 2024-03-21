@@ -172,25 +172,25 @@
                                 <ul class="d-flex">
                                     <li class="two-grid">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/svg/grid-2.svg" class="img-fluid blur-up lazyload"
+                                            <img src="{{ url('assets/svg/grid-2.svg')}}" class="img-fluid blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
                                     <li class="three-grid d-md-inline-block d-none">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/svg/grid-3.svg" class="img-fluid blur-up lazyload"
+                                            <img src="{{ url('assets/svg/grid-3.svg')}}" class="img-fluid blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
                                     <li class="grid-btn active d-lg-inline-block d-none">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/svg/grid.svg" class="img-fluid blur-up lazyload"
+                                            <img src="{{ url('assets/svg/grid.svg')}}" class="img-fluid blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
                                     <li class="list-btn">
                                         <a href="javascript:void(0)">
-                                            <img src="assets/svg/list.svg" class="img-fluid blur-up lazyload"
+                                            <img src="{{ url('assets/svg/list.svg')}}" class="img-fluid blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
@@ -212,13 +212,13 @@
                             <div class="img-wrapper">
                                 <div class="front">
                                     <a href="{{route('shop.product.details',['slug' => $product->slug ])}}">
-                                        <img src="assets/images/fashion/product/front/{{$product->image}}"
+                                        <img src="{{ url('assets/images/fashion/product/front/' .$product->image) }}"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="{{route('shop.product.details',['slug' => $product->slug ])}}">
-                                        <img src="assets/images/fashion/product/back/{{$product->image}}"
+                                        <img src="{{ url('assets/images/fashion/product/back/' .$product->image) }}"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
