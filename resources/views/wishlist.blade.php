@@ -53,7 +53,7 @@
             <tr>
             <td>
                 <a href="{{route('shop.product.details',['slug'=>$item->model->slug])}}">
-                    <img src="{{ url('assets/images/fashion/product/front/' . $item->model->image) }}"
+                    <img src="{{ asset('assets/images/fashion/product/front/' . $item->model->image) }}"
                         class="blur-up lazyload" alt="">
              </a>
             </td>

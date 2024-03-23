@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/slick/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/slick/slick-theme.css') }}">
     <link id="color-link" rel="stylesheet" type="text/css" href="{{ url('assets/css/demo4.css') }}">
+
     <style>
         .h-logo {
             max-width: 185px !important;
@@ -45,11 +46,11 @@
                 max-width: 110px !important;
             }
         }
-       
     </style>
     
     <link rel="stylesheet" href="{{ url('assets/css/custom.css') }}">
-@stack('styles')
+
+    @stack('styles')
 </head>
 
 <body class="theme-color4 light ltr">
@@ -117,7 +118,7 @@
                             <div class="menu-left">
                                 <div class="brand-logo">
                                     <a href="{{route('app.index')}}">
-                                        <img src="{{ url('assets/images/logo.png')}}" class="h-logo img-fluid blur-up lazyload"
+                                        <img src="{{ asset('assets/images/logo.png')}}" class="h-logo img-fluid blur-up lazyload"
                                             alt="logo">
                                     </a>
                                 </div>
@@ -283,7 +284,7 @@
                         <div class="footer-contact">
                             <div class="brand-logo">
                                 <a href="{{route('app.index')}}" class="footer-logo float-start">
-                                    <img src="{{ url('assets/images/logo.png') }}" class="f-logo img-fluid blur-up lazyload"
+                                    <img src="{{ asset('assets/images/logo.png') }}" class="f-logo img-fluid blur-up lazyload"
                                         alt="logo">
                                 </a>
                             </div>
@@ -403,25 +404,25 @@
                             <li class="font-dark">We accept:</li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{ url('assets/images/payment-icon/1.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ asset('assets/images/payment-icon/1.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{ url('assets/images/payment-icon/2.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ asset('assets/images/payment-icon/2.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{ url('assets/images/payment-icon/3.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ asset('assets/images/payment-icon/3.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{{ url('assets/images/payment-icon/4.jpg')}}" class="img-fluid blur-up lazyload"
+                                    <img src="{{ asset('assets/images/payment-icon/4.jpg')}}" class="img-fluid blur-up lazyload"
                                         alt="payment icon">
                                 </a>
                             </li>
@@ -576,7 +577,7 @@
                                                 <div class="img-wrapper">
                                                     <div class="front">
                                                         <a href="product/details.html">
-                                                            <img src="{{ url('assets/images/fashion/product/front/4.jpg')}}"-->
+                                                            <img src="{{ asset('assets/images/fashion/product/front/4.jpg')}}"-->
                                                                 class="bg-img blur-up lazyload" alt="">
                                                         </a>
                                                     </div>
