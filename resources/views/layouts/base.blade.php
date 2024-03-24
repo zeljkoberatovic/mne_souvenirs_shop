@@ -21,7 +21,7 @@
     <meta name="author" content="MS Shop">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <title>MS Shop</title>
+    <title>MS Shop - @yield('title')</title>
 
     <link id="rtl-link" rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/vendors/ion.rangeSlider.min.css') }}">
@@ -32,23 +32,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/vendors/slick/slick-theme.css') }}">
     <link id="color-link" rel="stylesheet" type="text/css" href="{{ url('assets/css/demo4.css') }}">
 
-    <style>
-        .h-logo {
-            max-width: 185px !important;
-        }
-
-        .f-logo {
-            max-width: 220px !important;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .h-logo {
-                max-width: 110px !important;
-            }
-        }
-    </style>
-    
-    <link rel="stylesheet" href="{{ url('assets/css/custom.css') }}">
 
     @stack('styles')
 </head>
@@ -118,8 +101,7 @@
                             <div class="menu-left">
                                 <div class="brand-logo">
                                     <a href="{{route('app.index')}}">
-                                        <img src="{{ asset('assets/images/logo.png')}}" class="h-logo img-fluid blur-up lazyload"
-                                            alt="logo">
+                                        <H2>MS Shop</H2>
                                     </a>
                                 </div>
                           </div>
@@ -216,14 +198,14 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="search-full">
-                                <form method="GET" class="search-full" action="http://localhost:8000/search">
+                               <div class="search-full">
+                                 <form method="GET" class="search-full" action="http://localhost:8000/search">
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i data-feather="search" class="font-light"></i>
                                         </span>
-                                        <input type="text" name="q" class="form-control search-type"
-                                            placeholder="Search here..">
+                                        <input type="text" id="searchInput" name="q" class="form-control search-type" placeholder="Search here..">
+
                                         <span class="input-group-text close-search">
                                             <i data-feather="x" class="font-light"></i>
                                         </span>
@@ -237,6 +219,7 @@
         </div>
     </header>
 
+<!-- mobillee-->
     <div class="mobile-menu d-sm-none">
         <ul>
             <li>
@@ -271,6 +254,7 @@
             </li>
         </ul>
     </div>
+<!-- END Mobile -->
 
 @yield('content')
 
@@ -284,8 +268,7 @@
                         <div class="footer-contact">
                             <div class="brand-logo">
                                 <a href="{{route('app.index')}}" class="footer-logo float-start">
-                                    <img src="{{ asset('assets/images/logo.png') }}" class="f-logo img-fluid blur-up lazyload"
-                                        alt="logo">
+                                    <H2>MS Shop</H2>
                                 </a>
                             </div>
                             <ul class="contact-lists" style="clear:both;">
@@ -327,32 +310,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-links">
-                            <div class="footer-title">
-                                <h3>New Categories</h3>
-                            </div>
-                            <div class="footer-content">
-                                <ul>
-                                    <li>
-                                        <a href="shop.html" class="font-dark">Latest Shoes</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop.html" class="font-dark">Branded Jeans</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop.html" class="font-dark">New Jackets</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop.html" class="font-dark">Colorfull Hoodies</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop.html" class="font-dark">Shiner Goggles</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                         <div class="footer-links">
                             <div class="footer-title">
@@ -464,149 +422,7 @@
         </div>
     </div>
 
-    <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="modal-contain">
-                        <div>
-                            <div class="modal-messages">
-                                <i class="fas fa-check"></i> 3-stripes full-zip hoodie successfully added to
-                                you cart.
-                            </div>
-                            <div class="modal-product">
-                                <div class="modal-contain-img">
-                                    <img src="assets/images/fashion/instagram/4.jpg" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </div>
-                                <div class="modal-contain-details">
-                                    <h4>Premier Cropped Skinny Jean</h4>
-                                    <p class="font-light my-2">Yellow, Qty : 3</p>
-                                    <div class="product-total">
-                                        <h5>TOTAL : <span>$1,140.00</span></h5>
-                                    </div>
-                                    <div class="shop-cart-button mt-3">
-                                        <a href="shop-left-sidebar.php"
-                                            class="btn default-light-theme conti-button default-theme default-theme-2 rounded">CONTINUE
-                                            SHOPPING</a>
-                                        <a href="cart.php"
-                                            class="btn default-light-theme conti-button default-theme default-theme-2 rounded">VIEW
-                                            CART</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-    <div class="ratio_asos mt-4">
-        <div class="container">
-            <div class="row m-0">
-                <div class="col-sm-12 p-0">
-                    <div
-                        class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space spacing-slider">
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="front">
-                                        <a href="product/details.html">
-                                            <img src="assets/images/fashion/product/front/1.jpg"
-                                                class="bg-img blur-up lazyload" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-details text-center">
-                                    <div class="rating-details d-block text-center">
-                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                    </div>
-                                    <div class="main-price mt-0 d-block text-center">
-                                        <h3 class="theme-color">$78.00</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="front">
-                                        <a href="product/details.html">
-                                            <img src="assets/images/fashion/product/front/2.jpg"
-                                                class="bg-img blur-up lazyload" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-details text-center">
-                                    <div class="rating-details d-block text-center">
-                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                    </div>
-                                    <div class="main-price mt-0 d-block text-center">
-                                        <h3 class="theme-color">$78.00</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="front">
-                                        <a href="product/details.html">
-                                            <img src="assets/images/fashion/product/front/3.jpg"
-                                                class="bg-img blur-up lazyload" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-details text-center">
-                                    <div class="rating-details d-block text-center">
-                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                    </div>
-                                    <div class="main-price mt-0 d-block text-center">
-                                        <h3 class="theme-color">$78.00</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                                        <div>
-                                            <div class="product-box">
-                                                <div class="img-wrapper">
-                                                    <div class="front">
-                                                        <a href="product/details.html">
-                                                            <img src="{{ asset('assets/images/fashion/product/front/4.jpg')}}"-->
-                                                                class="bg-img blur-up lazyload" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-details text-center">
-                                                    <div class="rating-details d-block text-center">
-                                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                                    </div>
-                                                    <div class="main-price mt-0 d-block text-center">
-                                                        <h3 class="theme-color">$78.00</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tap-to-top">
-        <a href="#home">
-            <i class="fas fa-chevron-up"></i>
-        </a>
-    </div>
-    <div class="bg-overlay"></div>
+    
     <script src="{{ url('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ url('assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('assets/js/feather/feather.min.js') }}"></script>
@@ -622,13 +438,13 @@
     <script src="{{ url('assets/js/bootstrap/bootstrap-notify.min.js') }}"></script>
     <script src="{{ url('assets/js/theme-setting.js') }}"></script>
     <script src="{{ url('assets/js/script.js') }}"></script>
-    <script>
+   
+<script>
         $(function () {
             $('[data-bs-toggle="tooltip"]').tooltip()
         });
-    </script>
-     @stack('scripts')
+</script>
 
- </body>
-
+        @stack('scripts')
+    </body>
 </html>

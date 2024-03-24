@@ -1,4 +1,7 @@
 @extends('layouts.base')
+@section('title')
+    Wishlist
+@endsection
 @section('content')
 
 <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">

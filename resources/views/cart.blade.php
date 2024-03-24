@@ -1,4 +1,7 @@
 @extends('layouts.base')
+@section('title')
+    Cart
+@endsection
 @section('content')
 
 <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">
@@ -197,15 +200,14 @@
             @method('delete')
     </form>
 @endsection
-
-@push('scripts')
-  <script>
+<script>
     //pomocu koje mijenjamo vrijednost u polju Quantity
     function updateQuantity(qty)
         {
             $('#rowId').val($(qty).data('rowid'));
             $('#quantity').val($(qty).val());
             $('#updateCartQty').submit();
+            console.log(qty);
         }
     // funkcije za brisanje kartice
     function removeItemFromCart(rowId)
@@ -217,6 +219,8 @@
         {
             $('#clearCart').submit();
         }
-        
-  </script>
+</script>
+
+@push('scripts')
+  
 @endpush

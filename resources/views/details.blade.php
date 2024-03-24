@@ -1,4 +1,7 @@
 @extends('layouts.base')
+@section('title')
+    Details
+@endsection
 @push('styles')
 <link id="color-link" rel="stylesheet" type="text/css" href="{{ url('assets/css/demo2.css')}}">
 @endpush

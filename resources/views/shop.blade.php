@@ -1,24 +1,16 @@
 @extends('layouts.base')
+@section('title')
+    Shop
+@endsection
 @push('styles')
 
-   <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/demo2.css">
+   <link id="color-link" rel="stylesheet" type="text/css" href="{{ asset('assets/css/demo2.css')}}">
 
 @endpush
 @section('content')
 
 <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+   
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -36,6 +28,7 @@
             </div>
         </div>
     </div>
+
 </section>
 <!-- Shop Section start -->
 <section class="section-b-space">
@@ -140,10 +133,7 @@
             <div class="category-product col-lg-9 col-12 ratio_30">
                 <div class="row g-4">
                     <!-- label and featured section -->
-                    <div class="col-md-12">
-                        <ul class="short-name">
-                      </ul>
-                    </div>
+    
 
                     <div class="col-12">
                         <div class="filter-options">
@@ -204,48 +194,44 @@
                 <!-- Prodcut setion -->
                 <div
                     class="row g-sm-4 g-3 row-cols-lg-4 row-cols-md-3 row-cols-2 mt-1 custom-gy-5 product-style-2 ratio_asos product-list-section">
-
-                    @foreach($products as $product)
-
+                @foreach($products as $product)
                     <div>
                         <div class="product-box">
                             <div class="img-wrapper">
                                 <div class="front">
                                     <a href="{{route('shop.product.details',['slug' => $product->slug ])}}">
                                         <img src="{{ asset('assets/images/fashion/product/front/' .$product->image) }}"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
+                                            class="bg-img blur-up lazyload" alt=""></a>
                                 </div>
                                 <div class="back">
                                     <a href="{{route('shop.product.details',['slug' => $product->slug ])}}">
                                         <img src="{{ asset('assets/images/fashion/product/back/' .$product->image) }}"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
+                                            class="bg-img blur-up lazyload" alt=""></a>
                                 </div>
+
                             <div class="cart-wrap">
                                 <ul>
-                                   <li>
-                                      <a href="javascript:void(0)" class="addtocart-btn" >
-                                      <i data-feather="shopping-cart"></i>
-                                      </a>
-                                   </li>
-                                <li>
-                                        <a href="javascript:void(0)">
-                                        <i data-feather="eye"></i>
-                                        </a>
-                                </li>
-                            <li>
-                            <a href="javascript:void(0)" class="wishlist"
-                                data-id='{{$product->id}}' 
-                                data-name='{{$product->name}}'
-                                data-quantity = 1 
-                                data-price = '{{$product->regular_price}}'> 
-                                    <i data-feather="heart"></i>
-                            </a>    
-                        </li>
-                                    </ul>
-                                </div>
+                                        <li>
+                                            <a href="javascript:void(0)" class="addtocart-btn" >
+                                            <i data-feather="shopping-cart"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                                <a href="javascript:void(0)" class="details-btn">
+                                                <i data-feather="eye"></i>
+                                                </a>
+                                        </li>
+                                    <li>
+                                        <a href="javascript:void(0)" class="wishlist"
+                                            data-id='{{$product->id}}' 
+                                            data-name='{{$product->name}}'
+                                            data-quantity = 1 
+                                            data-price = '{{$product->regular_price}}'> 
+                                                <i data-feather="heart"></i></a>    
+                                        </li>
+                                </ul>
                             </div>
+                        </div>
                             <div class="product-details">
                                 <div class="rating-details">
                                     <span class="font-light grid-content">{{$product->category->name}}</span>
@@ -282,9 +268,7 @@
                         </div>
                     </div>
                 @endforeach
-
-
-                </div>
+            </div>
                 {{$products->withQueryString()->links("pagination.default")}}
                 
             </div>
