@@ -2,6 +2,9 @@
 @section('title')
     Cart
 @endsection
+@push('styles')
+
+@endpush
 @section('content')
 
 <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">
@@ -180,8 +183,9 @@
             </div>
         @endif
     </div>
+
 </section>
-<!-- Obrazac za update cart quantity-->
+ <!-- Obrazac za update cart quantity-->
     <form id="updateCartQty" action="{{route('cart.update')}}" method="POST">
         @csrf
             @method('put')
@@ -189,38 +193,38 @@
             <input type="hidden" id="quantity" name="quantity"/>
     </form>
 
-<!-- Obrazac za uklanjanje stavke sa kartice -->
+ <!-- Obrazac za uklanjanje stavke sa kartice -->
     <form id="deleteFromCart"  action="{{route('cart.remove')}}" method="POST">
         @csrf
             @method('delete')
             <input type="hidden" id="rowId_D" name="rowId" />
     </form>
+ 
     <form id="clearCart" action="{{route('cart.clear')}}" method="POST">
         @csrf
             @method('delete')
     </form>
 @endsection
-<script>
-    //pomocu koje mijenjamo vrijednost u polju Quantity
-    function updateQuantity(qty)
-        {
-            $('#rowId').val($(qty).data('rowid'));
-            $('#quantity').val($(qty).val());
-            $('#updateCartQty').submit();
-            console.log(qty);
-        }
-    // funkcije za brisanje kartice
-    function removeItemFromCart(rowId)
-        {
-            $('#rowId_D').val(rowId);
-            $('#deleteFromCart').submit();
-        }
-    function clearCart()
-        {
-            $('#clearCart').submit();
-        }
-</script>
 
 @push('scripts')
-  
+    <script>
+        // funkcija pomocu koje mijenjamo vrijednost u polju Quantity
+        function updateQuantity(qty)
+            {
+                $('#rowId').val($(qty).data('rowid'));
+                $('#quantity').val($(qty).val());
+                $('#updateCartQty').submit();
+                console.log(qty);
+            }
+        // funkcije za brisanje kartice
+        function removeItemFromCart(rowId)
+            {
+                $('#rowId_D').val(rowId);
+                $('#deleteFromCart').submit();
+            }
+        function clearCart()
+            {
+                $('#clearCart').submit();
+            }
+    </script>
 @endpush

@@ -1,4 +1,7 @@
 @extends('layouts.base')
+@section('title')
+    Home
+@endsection
 @section('content')
 
 <!--Hero section start -->

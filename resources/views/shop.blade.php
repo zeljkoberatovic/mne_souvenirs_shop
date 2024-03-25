@@ -132,7 +132,7 @@
 
             <div class="category-product col-lg-9 col-12 ratio_30">
                 <div class="row g-4">
-                    <!-- label and featured section -->
+                    
     
 
                     <div class="col-12">

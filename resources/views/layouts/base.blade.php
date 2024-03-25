@@ -6,13 +6,13 @@
     <meta name="csrf-token" content="MkRqEzTGuoSx6LqJUm0OAKxSgNUYt26wTT7RMUZY">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}">
-    <link rel="icon" href="{{ url('assets/images/favicon.ico" type="image/x-icon') }}">
-    <link rel="icon" href="{{ url('assets/images/favicon.ico" type="image/x-icon') }}">
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico" type="image/x-icon') }}">
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico" type="image/x-icon') }}">
     <meta name="theme-color" content="#e87316">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="MS Shop">
-    <meta name="msapplication-TileImage" content="{{ url('assets/images/favicon.ico') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/images/favicon.ico') }}">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
