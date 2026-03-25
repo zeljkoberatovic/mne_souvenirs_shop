@@ -3,18 +3,16 @@
  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="MkRqEzTGuoSx6LqJUm0OAKxSgNUYt26wTT7RMUZY">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}">
-    <link rel="icon" href="{{ asset('assets/images/favicon.ico" type="image/x-icon') }}">
-    <link rel="icon" href="{{ asset('assets/images/favicon.ico" type="image/x-icon') }}">
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
     <meta name="theme-color" content="#e87316">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="MS Shop">
     <meta name="msapplication-TileImage" content="{{ asset('assets/images/favicon.ico') }}">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="MS Shop">
     <meta name="keywords" content="MS Shop">
@@ -90,6 +88,11 @@
                 padding: 5px 12px;
             }
         }
+
+        .page-breadcrumb {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     </style>
 
 <header class="header-style-2" id="home">
@@ -122,9 +125,7 @@
                                 <li><a href="{{route('app.index')}}" class="nav-link menu-title">Home</a></li>
                                 <li><a href="{{route('shop.index')}}" class="nav-link menu-title">Shop</a></li>
                                 <li><a href="{{route('cart.index')}}" class="nav-link menu-title">Cart</a></li>
-                                <li><a href="about-us.html" class="nav-link menu-title">About Us</a></li>
-                                <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a></li>
-                                <li><a href="blog.html" class="nav-link menu-title">Blog</a></li>
+                                <li><a href="{{route('wishlist.list')}}" class="nav-link menu-title">Wishlist</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,7 +200,7 @@
                                 </ul>
                             </div>
                                <div class="search-full">
-                                 <form method="GET" class="search-full" action="http://localhost:8000/search">
+                                                                 <form method="GET" class="search-full" action="{{ route('shop.index') }}">
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i data-feather="search" class="font-light"></i>
@@ -223,31 +224,31 @@
     <div class="mobile-menu d-sm-none">
         <ul>
             <li>
-                <a href="demo3.php" class="active">
+                <a href="{{ route('app.index') }}" class="active">
                     <i data-feather="home"></i>
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0)">
-                    <i data-feather="align-justify"></i>
-                    <span>Category</span>
+                <a href="{{ route('shop.index') }}">
+                    <i data-feather="grid"></i>
+                    <span>Shop</span>
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0)">
+                <a href="{{ route('cart.index') }}">
                     <i data-feather="shopping-bag"></i>
                     <span>Cart</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('wishlist.list') }}">
                     <i data-feather="heart"></i>
                     <span>Wishlist</span>
                 </a>
             </li>
             <li>
-                <a href="user-dashboard.php">
+                <a href="{{ route('user.index') }}">
                     <i data-feather="user"></i>
                     <span>Account</span>
                 </a>
@@ -298,13 +299,7 @@
                                         <a href="{{route('shop.index')}}" class="font-dark">Shop</a>
                                     </li>
                                     <li>
-                                        <a href="about-us.html" class="font-dark">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="font-dark">Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="contact-us.html" class="font-dark">Contact</a>
+                                        <a href="{{route('wishlist.list')}}" class="font-dark">Wishlist</a>
                                     </li>
                                 </ul>
                             </div>

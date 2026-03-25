@@ -8,28 +8,7 @@
 
 @endpush
 @section('content')
-
-<section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">
-   
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h3>Shop</h3>
-                <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="{{route('app.index')}}">
-                                <i class="fas fa-home"></i>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Shop</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-</section>
+@include('partials.page-breadcrumb', ['title' => 'Shop'])
 <!-- Shop Section start -->
 <section class="section-b-space">
     <div class="container">
@@ -223,10 +202,7 @@
                                         </li>
                                     <li>
                                         <a href="javascript:void(0)" class="wishlist"
-                                            data-id='{{$product->id}}' 
-                                            data-name='{{$product->name}}'
-                                            data-quantity = 1 
-                                            data-price = '{{$product->regular_price}}'> 
+                                            data-id='{{$product->id}}'> 
                                                 <i data-feather="heart"></i></a>    
                                         </li>
                                 </ul>
@@ -277,30 +253,7 @@
 </section>
 <!-- Shop Section end -->
 
-<!-- Subscribe Section Start -->
-<section class="subscribe-section section-b-space">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-6">
-                <div class="subscribe-details">
-                    <h2 class="mb-3">Subscribe Our News</h2>
-                    <h6 class="font-light">Subscribe and receive our newsletters to follow the news about our fresh
-                        and fantastic Products.</h6>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
-                <div class="subsribe-input">
-                    <div class="input-group">
-                        <input type="text" class="form-control subscribe-input" placeholder="Your Email Address">
-                        <button class="btn btn-solid-default" type="button">Button</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
- </section>
-  <!-- Subscribe Section End -->
+@include('partials.subscribe-section')
 
   <form id="frmFliter" method="GET">
         <input type="hidden" name="page" id="page" value="{{$page}}"/>
@@ -327,7 +280,7 @@
         // za filtriranje tabele brand
         function filterProductsByBrand(brand){
             var brands = "";
-            $("input[name='brands']: checked").each(function(){
+            $("input[name='brands']:checked").each(function(){
                 if(brands == ""){
                     brands += this.value;
                 }
@@ -340,9 +293,9 @@
         }
 
         //za filtriranje tabele category
-        function filterProductsByCategory(brand){
+        function filterProductsByCategory(category){
             var categories = "";
-            $("input[name='categories']: checked").each(function(){
+            $("input[name='categories']:checked").each(function(){
                 if(categories == ""){
                     categories += this.value;
                 }
@@ -355,17 +308,14 @@
         }
 
         //funkcije za  koriscenje wishliste
-        function addProductToWishlist(id, name, quantity, price)
+                function addProductToWishlist(id)
         {
               $.ajax({
                 type: 'POST',
                 url: "{{ route('wishlist.store') }}",
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    id: id,
-                    name: name,
-                    quantity: quantity,
-                    price: price
+                    id: id
                 },
                 success: function (data) {
                     if (data.status == 200) {
@@ -403,7 +353,7 @@
                     // console.log(this);
                     let data = this.dataset;
                     //this.classList.add('active');
-                    addProductToWishlist(data.id, data.name, data.quantity, data.price);
+                    addProductToWishlist(data.id);
                 
                 });
             }
