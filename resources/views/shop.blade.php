@@ -191,12 +191,12 @@
                             <div class="cart-wrap">
                                 <ul>
                                         <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" >
+                                            <a href="javascript:void(0)" class="addtocart-btn" data-id="{{$product->id}}">
                                             <i data-feather="shopping-cart"></i>
                                             </a>
                                         </li>
                                         <li>
-                                                <a href="javascript:void(0)" class="details-btn">
+                                                <a href="{{route('shop.product.details',['slug' => $product->slug ])}}" class="details-btn">
                                                 <i data-feather="eye"></i>
                                                 </a>
                                         </li>
@@ -261,6 +261,12 @@
         <input type="hidden" name="order" id="order" value="{{$order}}"/>
         <input type="hidden" name="brands" id="brands" value="{{$q_brands}}"/>
         <input type="hidden" name="categories" id="categories" value="{{$q_categories}}"/>
+  </form>
+
+  <form id="addToCartFromList" method="POST" action="{{route('cart.store')}}">
+      @csrf
+      <input type="hidden" name="id" id="list_product_id">
+      <input type="hidden" name="quantity" value="1">
   </form>
 @endsection
 
@@ -359,6 +365,15 @@
             }
         }
         addToWishlist();
+
+        function addToCartFromList() {
+            $(".addtocart-btn[data-id]").on("click", function () {
+                $("#list_product_id").val($(this).data("id"));
+                $("#addToCartFromList").submit();
+            });
+        }
+
+        addToCartFromList();
        
     </script>
 @endpush

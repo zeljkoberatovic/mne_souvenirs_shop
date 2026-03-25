@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -32,8 +34,8 @@ class ProductFactory extends Factory
             'quantity' => $this->faker->numberBetween(100,200),
             'image' => $image_name,
             'images' => $image_name,
-            'category_id' => $this->faker->numberBetween(1,6),
-            'brand_id' => $this->faker->numberBetween(1,6)
+            'category_id' => Category::query()->inRandomOrder()->value('id') ?? Category::factory(),
+            'brand_id' => Brand::query()->inRandomOrder()->value('id') ?? Brand::factory(),
             ];
     }
 }

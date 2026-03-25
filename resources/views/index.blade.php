@@ -1,4 +1,4 @@
-@extends('layouts.base')
+﻿@extends('layouts.base')
 @section('title')
     Home
 @endsection
@@ -64,16 +64,16 @@
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
                 <div class="collection-banner p-bottom p-center text-center">
-                    <a href="shop-left-sidebar.html" class="banner-img">
+                    <a href="{{route('shop.index')}}" class="banner-img">
                         <img src="{{ asset('assets/images/fashion/banner/1.jpg')}}" class="bg-img blur-up lazyload" alt="">
                     </a>
                     <div class="banner-detail">
-                        <a href="javacript:void(0)" class="heart-wishlist">
+                        <a href="{{route('wishlist.list')}}" class="heart-wishlist">
                             <i class="far fa-heart"></i>
                         </a>
                         <span class="font-dark-30">26% <span>OFF</span></span>
                     </div>
-                    <a href="shop-left-sidebar.html" class="contain-banner">
+                    <a href="{{route('shop.index')}}" class="contain-banner">
                         <div class="banner-content with-big">
                             <h2 class="mb-2">New Hoodie</h2>
                             <span>BUY ONE GET ONE FREE</span>
@@ -83,16 +83,16 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="collection-banner p-bottom p-center text-center">
-                    <a href="shop-left-sidebar.html" class="banner-img">
+                    <a href="{{route('shop.index')}}" class="banner-img">
                         <img src="{{ asset('assets/images/fashion/banner/2.jpg')}}" class="bg-img blur-up lazyload" alt="">
                     </a>
                     <div class="banner-detail">
-                        <a href="javacript:void(0)" class="heart-wishlist">
+                        <a href="{{route('wishlist.list')}}" class="heart-wishlist">
                             <i class="far fa-heart"></i>
                         </a>
                         <span class="font-dark-30">50% <span>OFF</span></span>
                     </div>
-                    <a href="shop-left-sidebar.html" class="contain-banner">
+                    <a href="{{route('shop.index')}}" class="contain-banner">
                         <div class="banner-content with-big">
                             <h2 class="mb-2">Women Fashion</h2>
                             <span>New offer 50% off</span>
@@ -102,16 +102,16 @@
             </div>
             <div class="col-lg-4">
                 <div class="collection-banner p-bottom p-center text-center">
-                    <a href="shop-left-sidebar.html" class="banner-img">
+                    <a href="{{route('shop.index')}}" class="banner-img">
                         <img src="{{ asset('assets/images/fashion/banner/3.jpg')}}" class="bg-img blur-up lazyload" alt="">
                     </a>
                     <div class="banner-detail">
-                        <a href="javacript:void(0)" class="heart-wishlist">
+                        <a href="{{route('wishlist.list')}}" class="heart-wishlist">
                             <i class="far fa-heart"></i>
                         </a>
                         <span class="font-dark-30">36% <span>OFF</span></span>
                     </div>
-                    <a href="shop-left-sidebar.html" class="contain-banner">
+                    <a href="{{route('shop.index')}}" class="contain-banner">
                         <div class="banner-content with-big">
                             <h2 class="mb-2">New Jacket</h2>
                             <span>BUY ONE GET ONE FREE</span>
@@ -176,7 +176,7 @@
             <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">
                     <div class="img-wrapper">
-                        <a href="product/details.html">
+                        <a href="{{route('shop.index')}}">
                             <img src="assets/images/fashion/product/front/10.jpg"
                                 class="w-100 bg-img blur-up lazyload" alt="">
                         </a>
@@ -188,7 +188,7 @@
                         <div class="cart-wrap">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0)" class="addtocart-btn">
+                                    <a href="{{route('cart.index')}}" class="addtocart-btn">
                                         <i data-feather="shopping-cart"></i>
                                     </a>
                                 </li>
@@ -198,7 +198,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="wishlist">
+                                    <a href="{{route('wishlist.list')}}" class="wishlist">
                                         <i data-feather="heart"></i>
                                     </a>
                                 </li>
@@ -230,7 +230,7 @@
                                 </div>
                             </div>
                             <p class="font-light mb-sm-2 mb-0">Dolores Et</p>
-                            <a href="product/details.html" class="font-default">
+                            <a href="{{route('shop.index')}}" class="font-default">
                                 <h5>Dolorem Libero Tempore Voluptatem</h5>
                             </a>
                         </div>
@@ -241,7 +241,7 @@
             <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">
                     <div class="img-wrapper">
-                        <a href="product/details.html">
+                        <a href="{{route('shop.index')}}">
                             <img src="assets/images/fashion/product/front/10.jpg"
                                 class="w-100 bg-img blur-up lazyload" alt="">
                         </a>
@@ -253,7 +253,7 @@
                         <div class="cart-wrap">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0)" class="addtocart-btn">
+                                    <a href="{{route('cart.index')}}" class="addtocart-btn">
                                         <i data-feather="shopping-cart"></i>
                                     </a>
                                 </li>
@@ -263,7 +263,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="wishlist">
+                                    <a href="{{route('wishlist.list')}}" class="wishlist">
                                         <i data-feather="heart"></i>
                                     </a>
                                 </li>
@@ -295,7 +295,7 @@
                                 </div>
                             </div>
                             <p class="font-light mb-sm-2 mb-0">Dolores Et</p>
-                            <a href="product/details.html" class="font-default">
+                            <a href="{{route('shop.index')}}" class="font-default">
                                 <h5>Quia Non Soluta Aut</h5>
                             </a>
                         </div>
@@ -306,7 +306,7 @@
             <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">
                     <div class="img-wrapper">
-                        <a href="product/details.html">
+                        <a href="{{route('shop.index')}}">
                             <img src="assets/images/fashion/product/front/17.jpg"
                                 class="w-100 bg-img blur-up lazyload" alt="">
                         </a>
@@ -318,7 +318,7 @@
                         <div class="cart-wrap">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0)" class="addtocart-btn">
+                                    <a href="{{route('cart.index')}}" class="addtocart-btn">
                                         <i data-feather="shopping-cart"></i>
                                     </a>
                                 </li>
@@ -328,7 +328,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="wishlist">
+                                    <a href="{{route('wishlist.list')}}" class="wishlist">
                                         <i data-feather="heart"></i>
                                     </a>
                                 </li>
@@ -360,7 +360,7 @@
                                 </div>
                             </div>
                             <p class="font-light mb-sm-2 mb-0">Blanditiis Error</p>
-                            <a href="product/details.html" class="font-default">
+                            <a href="{{route('shop.index')}}" class="font-default">
                                 <h5>Nulla Sapiente Sunt Ipsam</h5>
                             </a>
                         </div>
@@ -371,7 +371,7 @@
             <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">
                     <div class="img-wrapper">
-                        <a href="product/details.html">
+                        <a href="{{route('shop.index')}}">
                             <img src="assets/images/fashion/product/front/3.jpg"
                                 class="w-100 bg-img blur-up lazyload" alt="">
                         </a>
@@ -383,7 +383,7 @@
                         <div class="cart-wrap">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0)" class="addtocart-btn">
+                                    <a href="{{route('cart.index')}}" class="addtocart-btn">
                                         <i data-feather="shopping-cart"></i>
                                     </a>
                                 </li>
@@ -393,7 +393,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="wishlist">
+                                    <a href="{{route('wishlist.list')}}" class="wishlist">
                                         <i data-feather="heart"></i>
                                     </a>
                                 </li>
@@ -425,7 +425,7 @@
                                 </div>
                             </div>
                             <p class="font-light mb-sm-2 mb-0">Qui Ut</p>
-                            <a href="product/details.html" class="font-default">
+                            <a href="{{route('shop.index')}}" class="font-default">
                                 <h5>Fuga Officia Quaerat Fugiat</h5>
                             </a>
                         </div>
@@ -436,7 +436,7 @@
             <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">
                     <div class="img-wrapper">
-                        <a href="product/details.html">
+                        <a href="{{route('shop.index')}}">
                             <img src="assets/images/fashion/product/front/2.jpg"
                                 class="w-100 bg-img blur-up lazyload" alt="">
                         </a>
@@ -448,7 +448,7 @@
                         <div class="cart-wrap">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0)" class="addtocart-btn">
+                                    <a href="{{route('cart.index')}}" class="addtocart-btn">
                                         <i data-feather="shopping-cart"></i>
                                     </a>
                                 </li>
@@ -458,7 +458,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="wishlist">
+                                    <a href="{{route('wishlist.list')}}" class="wishlist">
                                         <i data-feather="heart"></i>
                                     </a>
                                 </li>
@@ -490,7 +490,7 @@
                                 </div>
                             </div>
                             <p class="font-light mb-sm-2 mb-0">Dolores Et</p>
-                            <a href="product/details.html" class="font-default">
+                            <a href="{{route('shop.index')}}" class="font-default">
                                 <h5>Doloremque Quibusdam Maxime Natus</h5>
                             </a>
                         </div>
@@ -501,7 +501,7 @@
             <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">
                     <div class="img-wrapper">
-                        <a href="product/details.html">
+                        <a href="{{route('shop.index')}}">
                             <img src="assets/images/fashion/product/front/12.jpg"
                                 class="w-100 bg-img blur-up lazyload" alt="">
                         </a>
@@ -513,7 +513,7 @@
                         <div class="cart-wrap">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0)" class="addtocart-btn">
+                                    <a href="{{route('cart.index')}}" class="addtocart-btn">
                                         <i data-feather="shopping-cart"></i>
                                     </a>
                                 </li>
@@ -523,7 +523,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="wishlist">
+                                    <a href="{{route('wishlist.list')}}" class="wishlist">
                                         <i data-feather="heart"></i>
                                     </a>
                                 </li>
@@ -555,7 +555,7 @@
                                 </div>
                             </div>
                             <p class="font-light mb-sm-2 mb-0">Cupiditate Minus</p>
-                            <a href="product/details.html" class="font-default">
+                            <a href="{{route('shop.index')}}" class="font-default">
                                 <h5>Nihil Beatae Sit Sed</h5>
                             </a>
                         </div>
@@ -583,7 +583,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/25.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -595,19 +595,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -639,7 +637,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>
@@ -649,7 +647,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/26.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -661,19 +659,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -705,7 +701,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>
@@ -715,7 +711,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/27.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -727,19 +723,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -771,7 +765,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>
@@ -781,7 +775,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/28.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -793,19 +787,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -837,7 +829,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>
@@ -847,7 +839,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/29.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -859,19 +851,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -903,7 +893,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>
@@ -913,7 +903,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/30.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -925,19 +915,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -969,7 +957,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>
@@ -979,7 +967,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/31.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -991,19 +979,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -1035,7 +1021,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>
@@ -1045,7 +1031,7 @@
                 <div>
                     <div class="product-box">
                         <div class="img-wrapper">
-                            <a href="product/details.html">
+                            <a href="{{route('shop.index')}}">
                                 <img src="{{ url('assets/images/fashion/product/front/32.jpg')}}"
                                     class="w-100 bg-img blur-up lazyload" alt="">
                             </a>
@@ -1057,19 +1043,17 @@
                             <div class="cart-wrap">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                            data-bs-target="#addtocart">
+                                        <a href="{{route('cart.index')}}" class="addtocart-btn">
                                             <i data-feather="shopping-cart"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#quick-view">
+                                        <a href="{{route('shop.index')}}">
                                             <i data-feather="eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.php" class="wishlist">
+                                        <a href="{{route('wishlist.list')}}" class="wishlist">
                                             <i data-feather="heart"></i>
                                         </a>
                                     </li>
@@ -1101,7 +1085,7 @@
                                     </div>
                                 </div>
                                 <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                <a href="product/details.html" class="font-default">
+                                <a href="{{route('shop.index')}}" class="font-default">
                                     <h5>Skater Multicolor Dress</h5>
                                 </a>
                             </div>

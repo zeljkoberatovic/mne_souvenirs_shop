@@ -93,6 +93,14 @@
             padding-top: 20px;
             padding-bottom: 20px;
         }
+
+        .main-menu .nav-menu > li > a {
+            letter-spacing: 0.2px;
+        }
+
+        .main-footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
     </style>
 
 <header class="header-style-2" id="home">
