@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-//use Cart;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 
@@ -19,22 +18,36 @@ class CartController extends Controller
     //dodavanje sadrzaja u corpi
     public function addToCart(Request $request)
     {
-        $product = Product::find($request->id);
+        $validated = $request->validate([
+            'id' => ['required', 'integer', 'exists:products,id'],
+            'quantity' => ['required', 'integer', 'min:1', 'max:99'],
+        ]);
+
+        $product = Product::findOrFail($validated['id']);
         $price = $product->sale_price ? $product->sale_price : $product->regular_price;
-        Cart::instance('cart')->add($product->id,$product->name,$request->quantity,$price)->associate('App\Models\Product');
+        Cart::instance('cart')->add($product->id, $product->name, $validated['quantity'], $price)->associate('App\Models\Product');
         return redirect()->back()->with('message','Success ! Item has been added successfully!');
     }
 
     //update cart Quantity
     public function updateCart(Request $request)
     {
-        Cart::instance('cart')->update($request->rowId,$request->quantity);
+        $validated = $request->validate([
+            'rowId' => ['required', 'string'],
+            'quantity' => ['required', 'integer', 'min:1', 'max:99'],
+        ]);
+
+        Cart::instance('cart')->update($validated['rowId'], $validated['quantity']);
         return redirect()->route('cart.index');
     }
     
     public function removeItem(Request $request)
     {
-        $rowId = $request->rowId;
+        $validated = $request->validate([
+            'rowId' => ['required', 'string'],
+        ]);
+
+        $rowId = $validated['rowId'];
         Cart::instance('cart')->remove($rowId);
         return redirect()->route('cart.index');
     }

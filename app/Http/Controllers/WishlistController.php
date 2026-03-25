@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
- //ako je "Cart" klasa deo Laravel paketa treće strane, najbolje je koristiti potpuni namespace.
-//use Cart;
 
 
 class WishlistController extends Controller
@@ -13,7 +11,14 @@ class WishlistController extends Controller
 
     public function addProductToWishlist(Request $request)
     {
-        Cart::instance("wishlist")->add($request->id, $request->name, 1, $request->price)->associate('App\Models\Product');
+        $validated = $request->validate([
+            'id' => ['required', 'integer', 'exists:products,id'],
+        ]);
+
+        $product = Product::findOrFail($validated['id']);
+        $price = $product->sale_price ?: $product->regular_price;
+
+        Cart::instance("wishlist")->add($product->id, $product->name, 1, $price)->associate('App\Models\Product');
         return response()->json(['status'=>200, 'message'=>'Success ! item successfully added to your wishlist.']);
 
     }
@@ -28,7 +33,11 @@ class WishlistController extends Controller
 
     public function removeProductFromWishlist(Request $request)
     {
-        $rowId = $request->rowId;
+        $validated = $request->validate([
+            'rowId' => ['required', 'string'],
+        ]);
+
+        $rowId = $validated['rowId'];
         Cart::instance('wishlist')->remove($rowId);
         return redirect()->route('wishlist.list');
     }
@@ -41,9 +50,25 @@ class WishlistController extends Controller
 
     public function moveToCart(Request $request)
     {
-        $item = Cart::instance('wishlist')->get($request->rowId);
-        Cart::instance('wishlist')->remove($request->rowId);
-        Cart::instance('cart')->add($item->model->id, $item->model->name, 1, $item->model->regular_price)
+        $validated = $request->validate([
+            'rowId' => ['required', 'string'],
+        ]);
+
+        $item = Cart::instance('wishlist')->get($validated['rowId']);
+        if (!$item || !$item->model) {
+            return redirect()->route('wishlist.list')->with('error', 'Item not found in wishlist.');
+        }
+
+        $product = Product::find($item->model->id);
+        if (!$product) {
+            Cart::instance('wishlist')->remove($validated['rowId']);
+            return redirect()->route('wishlist.list')->with('error', 'Product is no longer available.');
+        }
+
+        $price = $product->sale_price ?: $product->regular_price;
+
+        Cart::instance('wishlist')->remove($validated['rowId']);
+        Cart::instance('cart')->add($product->id, $product->name, 1, $price)
                                   ->associate('App\Models\Product');
         return redirect()->route('wishlist.list');                          
     }

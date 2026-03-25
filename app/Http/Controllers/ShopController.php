@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Brand;
 use App\Models\Category;
-//use Cart;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ShopController extends Controller
@@ -14,15 +13,10 @@ class ShopController extends Controller
     public function index(Request $request)
     {
       //sortiranje proizvoda i broj proizvoda po stranici
-        $page = $request->query("page");
-        $size = $request->query("size");
-        if(!$page)
-           $page = 1;
-        if(!$size)
-           $size = 12;
-        $order = $request->query("order");
-        if(!$order)
-            $order = -1;
+        $page = max(1, (int) $request->query("page", 1));
+        $size = (int) $request->query("size", 12);
+        $size = in_array($size, [12, 24, 52, 100], true) ? $size : 12;
+        $order = (int) $request->query("order", -1);
         $o_column = "";
         $o_order = "";
         switch ($order) {
@@ -34,11 +28,11 @@ class ShopController extends Controller
                 $o_column = "created_at";
                 $o_order = "ASC";
                 break;
-            case 1:
+            case 3:
                 $o_column = "regular_price";
                 $o_order = "ASC";
                 break;
-            case 1:
+            case 4:
                 $o_column = "regular_price";
                 $o_order = "DESC";
                 break;    
@@ -47,20 +41,25 @@ class ShopController extends Controller
                 $o_order = "DESC";
                     
         }
-      //filtriranje Brendova
+      //filtriranje brendova i kategorija uz sanitizaciju ID vrednosti
         $brands = Brand::orderBy('name', 'ASC')->get();
-        $q_brands = $request->query("brands");
+        $q_brands = trim((string) $request->query("brands", ""));
+        $brandIds = array_values(array_filter(array_map('intval', explode(',', $q_brands)), fn($id) => $id > 0));
 
         $categories = Category::orderBy("name", 'ASC')->get();
-        $q_categories = $request->query("categories");
+        $q_categories = trim((string) $request->query("categories", ""));
+        $categoryIds = array_values(array_filter(array_map('intval', explode(',', $q_categories)), fn($id) => $id > 0));
 
-        $products = Product::where(function($query) use($q_brands){
-                               $query->whereIn('brand_id',explode(',',$q_brands))->orWhereRaw("'".$q_brands."'=''");
-                            })
-                            ->where(function($query) use($q_categories){
-                                $query->whereIn('category_id',explode(',', $q_categories))->orWhereRaw("'".$q_categories."'=''");
-                            })
-                  ->orderBy('created_at','DESC')->orderBy($o_column, $o_order)->paginate($size);
+        $products = Product::query()
+            ->with(['brand', 'category'])
+            ->when(!empty($brandIds), function ($query) use ($brandIds) {
+                $query->whereIn('brand_id', $brandIds);
+            })
+            ->when(!empty($categoryIds), function ($query) use ($categoryIds) {
+                $query->whereIn('category_id', $categoryIds);
+            })
+            ->orderBy($o_column, $o_order)
+            ->paginate($size);
 
         return view('shop',['products'=>$products, 'page'=>$page, 'size'=>$size, 'order'=>$order, 
         'brands'=>$brands, 'q_brands'=>$q_brands, 'categories'=>$categories, 'q_categories'=>$q_categories]);
@@ -69,9 +68,8 @@ class ShopController extends Controller
 
     public function productDetails($slug)
     {   
-        //print_r($slug);
-        $product = Product::where('slug', $slug)->first();
-        $rproducts = Product::where('slug', '!=', $slug)->inRandomOrder('id')->get()->take(8);  
+        $product = Product::where('slug', $slug)->firstOrFail();
+        $rproducts = Product::where('slug', '!=', $slug)->inRandomOrder()->limit(8)->get();
         return view('details', ['product' =>$product, 'rproducts'=>$rproducts]);
     }
 

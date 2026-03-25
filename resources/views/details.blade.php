@@ -7,7 +7,9 @@
 @endpush
 @section('content')
 
-<?//= dd($product); ?>
+@php
+    $images = $product->images ? explode(',', $product->images) : [];
+@endphp
 
 <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">
     <ul class="circles">
@@ -57,10 +59,7 @@
                                           </div>
 
                                <!-- za prikaz vise slika,galeriski prikaz -->
-                                    @if($product->images)
-                                           @php
-                                               $images =explode(',',$product->images);
-                                           @endphp
+                                    @if(!empty($images))
                                         @foreach($images as $image)
                                             <div>
                                                 <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}"
@@ -76,21 +75,12 @@
                                             <img src="{{ asset('assets/images/fashion/product/front')}}/{{$product->image}}"         
                                                 class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="{{$product->name}}">
                                         </div>
-                                       <div>
-                                            <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}" id="zoom_02"
-                                                data-zoom-image="assets/images/fashion/2.jpg"
-                                                class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}" id="zoom_03"
-                                                data-zoom-image="assets/images/fashion/3.jpg"
-                                                class="img-fluid w-100 image_zoom_cls-2 blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}" id="zoom_04"
-                                                data-zoom-image="assets/images/fashion/4.jpg"
-                                                class="img-fluid w-100 image_zoom_cls-3 blur-up lazyload" alt="">
-                                        </div>
+                                        @foreach($images as $image)
+                                            <div>
+                                                <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}"
+                                                    class="img-fluid w-100 blur-up lazyload" alt="{{$product->name}}">
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -141,19 +131,19 @@
                                         <ul class="image-section">
                                             <li>
                                                 <a href="javascript:void(0)">
-                                                    <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}"
+                                                    <img src="{{ asset('assets/images/fashion/product/front')}}/{{$product->image}}"
                                                         class="img-fluid blur-up lazyload" alt="">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="javascript:void(0)">
-                                                    <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}"
+                                                    <img src="{{ asset('assets/images/fashion/product/front')}}/{{$product->image}}"
                                                         class="img-fluid blur-up lazyload" alt="">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="javascript:void(0)">
-                                                    <img src="{{ asset('assets/images/fashion/product/front')}}/{{$image}}"
+                                                    <img src="{{ asset('assets/images/fashion/product/front')}}/{{$product->image}}"
                                                         class="img-fluid blur-up lazyload" alt="">
                                                 </a>
                                             </li>
